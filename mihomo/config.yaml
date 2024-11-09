@@ -21,7 +21,7 @@ proxy-groups:
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png
     type: select
     proxies:
-      - SELECT
+      - PROXY
       - AUTO
       - DIRECT
   - name: HK
