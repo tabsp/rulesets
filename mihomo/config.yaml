@@ -168,17 +168,19 @@ rule-providers:
     path: ./ruleset/applications.yaml
     interval: 86400
   force-direct:
-    type: http
+    url: "https://rulesets.tabsp.com/mihomo/force-direct.list"
+    path: ./ruleset/force-direct.list
     behavior: classical
-    url: "https://rulesets.tabsp.com/mihomo/force-direct.yaml"
-    path: ./ruleset/force-direct.yaml
     interval: 86400
+    format: text
+    type: http
   force-proxy:
-    type: http
+    url: "https://rulesets.tabsp.com/mihomo/force-proxy.list"
+    path: ./ruleset/force-proxy.list
     behavior: classical
-    url: "https://rulesets.tabsp.com/mihomo/force-proxy.yaml"
-    path: ./ruleset/force-proxy.yaml
     interval: 86400
+    format: text
+    type: http
 
 rules:
   - RULE-SET,force-direct,DIRECT
