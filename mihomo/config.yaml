@@ -1,3 +1,20 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: :9090
+dns:
+  enabled: true
+  nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  fallback:
+    - 8.8.8.8
+    - 8.8.4.4
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
+
 proxy-groups:
   - name: PROXY
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png
@@ -168,14 +185,14 @@ rule-providers:
     path: ./ruleset/applications.yaml
     interval: 86400
   force-direct:
-    url: "https://rulesets.tabsp.com/mihomo/force-direct.list"
+    url: "https://cdn.jsdelivr.net/gh/tabsp/rulesets@master/mihomo/force-direct.list"
     path: ./ruleset/force-direct.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   force-proxy:
-    url: "https://rulesets.tabsp.com/mihomo/force-proxy.list"
+    url: "https://cdn.jsdelivr.net/gh/tabsp/rulesets@master/mihomo/force-proxy.list"
     path: ./ruleset/force-proxy.list
     behavior: classical
     interval: 86400
@@ -201,4 +218,4 @@ rules:
   - RULE-SET,telegramcidr,PROXY
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
-  - MATCH,FINAL
+  - MATCH,PROXY
