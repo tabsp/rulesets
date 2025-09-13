@@ -213,14 +213,14 @@ rule-providers:
   force-direct:
     type: http
     behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/tabsp/rulesets@master/mihomo/force-direct.list"
+    url: "https://rulesets.tabsp.com/mihomo/force-direct.list"
     path: ./ruleset/force-direct.list
     format: text
     interval: 86400
   force-proxy:
     type: http
     behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/tabsp/rulesets@master/mihomo/force-proxy.list"
+    url: "https://rulesets.tabsp.com/mihomo/force-proxy.list"
     path: ./ruleset/force-proxy.list
     format: text
     interval: 86400
